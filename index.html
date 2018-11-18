@@ -2,27 +2,100 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="static/main.css">
     <title>Title</title>
 </head>
 <body>
-<form>
-    <label>Author</label>
-    <input id="author" name="author" type="text"><br>
-    <label>title</label>
-    <input id="title" name="title" type="text"><br>
-    <label>isbn</label>
-    <input id="isbn" name="isbn" type="text"><br>
-    <label>publisher</label>
-    <input id="publisher" name="publisher" type="text"><br>
-    <label>genre</label>
-    <input id="genre" name="genre" type="number"><br>
-    <input name="submit" type="submit" value="submit">
-</form>
-    <div id="name"></div>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4" href="#">Książki</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+                <!--<a class="nav-item nav-link" href="{% url 'show-all' %}">Osoby</a>-->
+                <!--<a class="nav-item nav-link" href="{% url 'show-all-groups' %}">Grupy</a>-->
+                <!--<a class="nav-item nav-link" href="{% url 'show-all-address' %}">Adresy</a>-->
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+<main role="main" class="container">
+    <div class="row">
+
+<div class="col-md-8">
+<div class="content-section">
+        <form method="post">
+            <fieldset class="form-group">
+                <label class="border-bottom mb-4">Dodaj książkę</label>
+
+                <div id="div_id_author" class="form-group">
+                    <label for="id_author" class="col-form-label  requiredField">Autor</label>
+                    <div class="">
+                        <input type="text" name="author" maxlength="200" class="textinput textInput form-control" required id="id_author">
+                    </div>
+                </div>
+
+                <div id="div_id_title" class="form-group">
+                    <label for="id_title" class="col-form-label  requiredField">Tytuł</label>
+                    <div class="">
+                        <input type="text" name="title" maxlength="200" class="textinput textInput form-control" required id="id_title">
+                    </div>
+                </div>
+
+                <div id="div_id_isbn" class="form-group">
+                    <label for="id_isbn" class="col-form-label  requiredField">ISBN</label>
+                    <div class="">
+                        <input name="isbn" maxlength="17" class="textinput textInput form-control" required id="id_isbn">
+                    </div>
+                </div>
+
+                <div id="div_id_publisher" class="form-group">
+                    <label for="id_publisher" class="col-form-label  requiredField">Osoba publikująca</label>
+                    <div class="">
+                        <input name="publisher" maxlength="200" class="textinput textInput form-control" required id="id_publisher">
+                    </div>
+                </div>
+                <div id="div_id_genre" class="form-group">
+                    <label for="id_genre" class="col-form-label  requiredField">Gatunek</label>
+                    <div class="">
+                         <select name="genre" required id="id_genre">
+                              <option value="1">Romans</option>
+                              <option value="2">Obyczajowa</option>
+                              <option value="3">Sci-fi i fantasy</option>
+                              <option value="4">Literatura faktu</option>
+                              <option value="5">Popularnonaukowa</option>
+                              <option value="6">Poradnik</option>
+                              <option value="7">Kryminał, sensacja</option>
+                        </select>
+                    </div>
+                </div>
+
+            </fieldset>
+            <div class="form-group">
+                <button id="submit" class="btn btn-outline-info" type="submit">Dodaj</button>
+            </div>
+        </form>
+</div>
+    <h3>Tytuły książek</h3>
+    <div id="name" class="content-section"></div>
+</div>
+
+    </div>
+</main>
     <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
-    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="static/app.js"></script>
 </body>
 </html>
