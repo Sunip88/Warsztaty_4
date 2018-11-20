@@ -30,7 +30,7 @@
 <main role="main" class="container">
     <div class="row">
 
-<div class="col-md-8">
+<div class="col-md-10">
 <div class="content-section">
         <form method="post">
             <fieldset class="form-group">
@@ -80,9 +80,59 @@
 
             </fieldset>
             <div class="form-group">
-                <button id="submit" class="btn btn-outline-info" type="submit">Dodaj</button>
+                <button id="submit" class="btn btn-outline-info" type="submit" data-method="POST">Dodaj</button>
             </div>
         </form>
+
+        <form method="post" class="form_hidden">
+            <label>Edycja książki</label>
+
+            <div id="div_id_author_PUT">
+                <label>Autor</label>
+                <div class="">
+                    <input type="text" name="author" maxlength="200" class="textinput textInput id_author_PUT" required>
+                </div>
+            </div>
+
+            <div id="div_id_title_PUT">
+                <label>Tytuł</label>
+                <div class="">
+                    <input type="text" name="title" maxlength="200" class="textinput textInput id_title_PUT">
+                </div>
+            </div>
+
+            <div id="div_id_isbn_PUT">
+                <label>ISBN</label>
+                <div class="">
+                    <input name="isbn" maxlength="17" class="textinput textInput id_isbn_PUT">
+                </div>
+            </div>
+
+            <div id="div_id_publisher_PUT">
+                <label>Osoba publikująca</label>
+                <div>
+                    <input name="publisher" maxlength="200" class="textinput textInput id_publisher_PUT">
+                </div>
+            </div>
+            <div id="div_id_genre_PUT">
+                <label>Gatunek</label>
+                <div>
+                     <select class="id_genre_PUT" name="genre" required>
+                          <option value="1">Romans</option>
+                          <option value="2">Obyczajowa</option>
+                          <option value="3">Sci-fi i fantasy</option>
+                          <option value="4">Literatura faktu</option>
+                          <option value="5">Popularnonaukowa</option>
+                          <option value="6">Poradnik</option>
+                          <option value="7">Kryminał, sensacja</option>
+                    </select>
+                </div>
+            </div>
+
+        <div>
+            <button id="submit_PUT" class="btn btn-outline-info" type="submit" data-method="PUT">Dodaj</button>
+        </div>
+    </form>
 </div>
     <h3>Tytuły książek</h3>
     <div id="name" class="content-section"></div>
